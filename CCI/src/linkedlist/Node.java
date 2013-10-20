@@ -3,6 +3,7 @@ package linkedlist;
 class Node {
 	Node next = null;
 	int data;
+	//int flag = 0;
 	
 	public Node (int d) {
 		data = d;
