@@ -1,12 +1,12 @@
-package linkedlist;
+package stacks_and_queues;
 
-public class Node {
-	public Node next = null;
-	public int data;
+class Node {
+	Node next = null;
+	Object data;
 	//int flag = 0;
 	
-	public Node (int d) {
-		data = d;
+	public Node (Object item) {
+		data = item;
 	}
 	
 	void appendToTail(int d) {
