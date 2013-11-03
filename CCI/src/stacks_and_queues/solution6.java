@@ -10,6 +10,19 @@ import java.util.Stack;
  */
 public class solution6 {
 	
+	/* solution from the manual */
+	public Stack<Integer> sort(Stack<Integer> s) {
+		Stack<Integer> r = new Stack<Integer>();
+		while (!s.isEmpty()) {
+			int tmp = s.pop();
+			while (!r.isEmpty() && r.peek() > tmp) {
+				s.push(r.pop());
+			}
+			r.push(tmp);
+		}
+		return r;
+	}
+	
 	public Stack<Integer> solver(Stack<Integer> s) {
 		
 		Stack<Integer> s2 = new Stack<Integer>();
@@ -77,12 +90,16 @@ public class solution6 {
 		s.push(6);
 		s.push(5);
 		s.push(1);
+		
 		for (int i = 0; i < s.size(); i++)
 		{
 			System.out.print(s.get(i));
 		}
+		
 		solution6 mysolution = new solution6();
-		Stack<Integer> s2 = mysolution.solver(s);
+		//Stack<Integer> s2 = mysolution.solver(s);
+		Stack<Integer> s2 = mysolution.sort(s);
+		
 		System.out.println();
 		for (int i = 0; i < s2.size(); i++)
 		{
