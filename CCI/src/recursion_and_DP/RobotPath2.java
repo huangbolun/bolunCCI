@@ -1,5 +1,8 @@
 package recursion_and_DP;
 
+import java.util.Hashtable;
+import java.util.ArrayList;
+
 /**
  * solution to CCI 9.2
  * robot walking in a grid X by Y
@@ -27,5 +30,39 @@ public class RobotPath2 {
 			return grid[X-1][Y-1];
 		}
 	}
+	/**
+	 * follow up: find a path from (0, 0) to (X-1, Y-1)
+	 * use dfs to find a path, we need to care about
+	 * @param X
+	 * @param Y
+	 */
+	public boolean findPath(int X, int Y, ArrayList<Point> path, Hashtable<Point, Boolean> cache) {
+		
+		Point p = new Point(X, Y);
+		if (cache.containsKey(p)) 
+			return cache.get(p); // already visit the cell
+		if (X == 0 && Y == 0) 
+			return true; // already find a path
+		boolean success = false;
+		if (X >= 1 && isFree(X - 1, Y))
+			success = findPath(X-1, Y, path, cache);
+		if (!success && Y >= 1 && isFree(X, Y - 1)) 
+			success = findPath(X, Y-1, path, cache);
+		if (success)
+			path.add(p);
+		cache.put(p, success);
+		return success;
+		
+	}
+	
+	public boolean isFree(int x, int y) {
+		return true;
+	}
+	
+	public static void main(String[] args) {
+		RobotPath2 rp = new RobotPath2();
+		System.out.println(rp.run(7, 7));
+	}
+	
 	
 }
