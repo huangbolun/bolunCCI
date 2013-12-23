@@ -50,5 +50,4 @@ public class solution1 {
 		else 
 			return false;
 	}
-	
 }

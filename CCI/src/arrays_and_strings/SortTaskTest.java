@@ -25,7 +25,8 @@ public class SortTaskTest {
 		testarray[2] = new Task(2,6,4);
 		testarray[3] = new Task(5,4,7);
 		testarray[4] = new Task(9,8,2);
-		
+		java.util.LinkedList<Integer> l = new java.util.LinkedList<Integer>();
+
 		SortTaskTest stt = new SortTaskTest();
 		
 		System.out.println(stt.toStringTaskArray(testarray));
