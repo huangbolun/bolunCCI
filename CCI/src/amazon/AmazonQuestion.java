@@ -5,7 +5,7 @@ package amazon;
  * if not, ignore.
  */
 
-/* The time complexity of my algorithm is O(MN), where M is the length of the first list
+/* The time complexity of my algorithm is O(M+N), where M is the length of the first list
  * and N is the length of the second list. In order to use less memory I choose the smaller
  * list to construct the additional map.
  */
