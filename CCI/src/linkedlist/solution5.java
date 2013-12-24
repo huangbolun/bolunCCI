@@ -149,30 +149,30 @@ public class solution5 {
 	
 	public static void main(String[] args) {
 		
-		Node d1 = new Node(2);
-		Node d2 = new Node(3);
-		Node d3 = new Node(3);
-		Node d4 = new Node(1);
+		Node d1 = new Node(1);
+		//Node d2 = new Node(3);
+		//Node d3 = new Node(3);
+		//Node d4 = new Node(1);
 
-		d1.next = d2;
-		d2.next = d3;
-		d3.next = d4;
-		d4.next = null;
+		//d1.next = d2;
+		//d2.next = d3;
+		//d3.next = d4;
+		//d4.next = null;
 		
-		Node c1 = new Node(5);
-		Node c2 = new Node(1);
-		Node c3 = new Node(7);
+		Node c1 = new Node(9);
+		Node c2 = new Node(9);
+		//Node c3 = new Node(7);
 		
 		c1.next = c2;
-		c2.next = c3;
-		c3.next = null;
+		//c2.next = c3;
+		//c3.next = null;
 		
 		solution5 mysolution = new solution5();
-		mysolution.printLinkedList(d1);
-		mysolution.printLinkedList(c1);
+		//mysolution.printLinkedList(d1);
+		//mysolution.printLinkedList(c1);
 
-		//mysolution.printLinkedList(mysolution.solver1(d1, c1));
-		mysolution.printLinkedList(mysolution.solver2(d1, c1));
+		mysolution.printLinkedList(mysolution.solver1(d1, c1));
+		//mysolution.printLinkedList(mysolution.solver2(d1, c1));
 		
 	}
 	
