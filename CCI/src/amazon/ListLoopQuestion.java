@@ -14,6 +14,9 @@ public class ListLoopQuestion {
     public static class ListNode {
         public int value;
         public ListNode next;
+        public ListNode(int val) {
+        	value = val;
+        }
     }
     /**
      * determine whether the two nodes are the same by looking its K subsequent nodes

@@ -22,12 +22,19 @@ public class TwoSum {
 		}
 		return result;
 	}
-	
+	 
 	public static void main(String[] args) {
 		TwoSum ts = new TwoSum();
 		int[] input = {5,7,44,76,3,2,6,11,32,18,1};
 		ts.twoSum(input, 9);
 		System.out.println(4%10);
+		String s = new String("aa");
+		System.out.println(s.substring(1));
+		String s1 = new String("a");
+		System.out.println(s1.substring(1));
+		char c = '\0';
+		StringBuilder sb = new StringBuilder();
+		
 	}
 	
 }

@@ -2,9 +2,9 @@ package tree_and_graphs;
 
 public class TreeNode {
 	
-	int value;
-	TreeNode leftChild;
-	TreeNode rightChild;
+	public int value;
+	public TreeNode leftChild;
+	public TreeNode rightChild;
 	
 	public TreeNode(int val) {
 		this.value = val;
