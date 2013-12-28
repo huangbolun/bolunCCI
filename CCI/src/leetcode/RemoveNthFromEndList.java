@@ -69,6 +69,8 @@ public class RemoveNthFromEndList {
     	ListNode head = new ListNode(1);
     	head.next = new ListNode(2);
     	r.removeNthFromEnd(head, 1);
+    	int[] A = {1,2,3,4};
+    	A = null;
     }
     
 }
