@@ -33,6 +33,13 @@ public class SearchRange {
     	int[] res = sr.searchRange(A, 0);
     	System.out.print(res[0]+" ");
     	System.out.println(res[1]);
+        boolean[] flags = new boolean[9]; // reset
+        for (int i = 0; i < flags.length; i++) {
+        	System.out.print(flags[i]+" ");
+        }
+        System.out.println();
+        String s = new String("76543");
+        s.charAt(5);
     }
     
 }

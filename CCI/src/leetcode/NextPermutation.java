@@ -14,7 +14,7 @@ public class NextPermutation {
                 break;
             }
         }
-        System.out.println(end);
+        //System.out.println(end);
         if (end == 0) { // the list is already largest possible
         	//System.out.println("!");
             sort(num, end);
@@ -65,5 +65,9 @@ public class NextPermutation {
     	np.nextPermutation(num);
     	for(int i = 0; i < num.length; i++)
     		System.out.print(num[i]+" ");
+    	System.out.println(num.equals(num));
+    	java.util.HashSet<java.util.ArrayList<Integer>> hs = new java.util.HashSet<java.util.ArrayList<Integer>>();
+    	java.util.ArrayList<java.util.ArrayList<Integer>> al = new java.util.ArrayList<java.util.ArrayList<Integer>>(hs);
+    	
     }
 }

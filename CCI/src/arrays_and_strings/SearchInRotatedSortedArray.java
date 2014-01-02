@@ -27,5 +27,8 @@ public class SearchInRotatedSortedArray {
 		int[] a = {6,7,8,9,1,2,3,5};
 		SearchInRotatedSortedArray mySIRSA = new SearchInRotatedSortedArray();
 		mySIRSA.search(a, 2);
+		java.util.PriorityQueue<Integer> queue = new java.util.PriorityQueue<Integer>();
+		String s = new String("");
+		
 	}
 }
