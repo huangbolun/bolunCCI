@@ -7,7 +7,7 @@ public class RemoveDuplicatesArray {
         if (A.length < 2) return A.length;
         int len = 1;
         for (int i = 1; i < A.length; i++) {
-            if (A[len-1] != A[i]) {
+            if (A[len-1] != A[i]) { // good to use [len-1]
                 A[len] = A[i];
                 len += 1;
             }
