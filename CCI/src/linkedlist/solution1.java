@@ -1,5 +1,8 @@
 package linkedlist;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+
 /**
  * remove duplicate from an 
  * 1) sorted linked list
@@ -92,7 +95,8 @@ public class solution1 {
 	}
 	
 	public static void main(String[] args) {
-		
+		LinkedList<Integer> l = new LinkedList<Integer>();
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		/* sorted linked list */
 		Node head = new Node(2);
 		Node second = new Node(3);
