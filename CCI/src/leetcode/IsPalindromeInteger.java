@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 public class IsPalindromeInteger {
 	
     public boolean isPalindrome(int x) {
@@ -44,7 +46,6 @@ public class IsPalindromeInteger {
     }
     
     public static void main(String[] arg) {
-    	
     	IsPalindromeInteger ip = new IsPalindromeInteger();
     	System.out.println(ip.isPalindrome(11));
     	

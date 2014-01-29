@@ -52,11 +52,12 @@ public class MergeSortArray {
 	}
 	
 	public static void main(String[] args) {
+		String s = new String("123456");
+		System.out.println(s.substring(6));
 		int[] array = {2,55,17,1,11,11,21,10,1,63,42,21,8,34,51,10};
 		MergeSortArray m = new MergeSortArray();
 		System.out.println(Arrays.toString(array));
 		m.MergeSort(array);
 		System.out.println(Arrays.toString(array));
 	}
-	
 }

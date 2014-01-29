@@ -22,7 +22,42 @@ public class TwoSum {
 		}
 		return result;
 	}
-	 
+	/**
+	 * One pass algo: O(nlog(n)) for sorting
+	 * @param numbers
+	 * @param target
+	 * @return
+	 */
+	public int[] twoSum2(int[] numbers, int target) {
+		int[] result = new int[2];
+		result[0] = -1; // default
+		result[1] = -1; // default
+		if (numbers == null || numbers.length == 0) return result;
+		int i = 0;
+		int j = numbers.length-1;
+		java.util.Arrays.sort(numbers); // sort the numbers ascendingly
+		while (i < j) {
+			int twosum = result[i] + result[j];
+			if (twosum == target) {
+				result[0] = i;
+				result[1] = j;
+				break;
+			}
+			if (twosum < target) i++;
+			if (twosum > target) j++;
+		}
+		return result;
+	}
+	
+	public int[] twoSum3(int[] numbers, int target) {
+		int[] result = new int[2];
+		result[0] = -1; // default
+		result[1] = -1; // default
+		if (numbers == null || numbers.length == 0) return result;
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		TwoSum ts = new TwoSum();
 		int[] input = {5,7,44,76,3,2,6,11,32,18,1};
