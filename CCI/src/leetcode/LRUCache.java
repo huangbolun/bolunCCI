@@ -7,8 +7,45 @@ import java.util.LinkedList;
  * @author Bolun
  *
  */
-public class LRUCache {
+class DoubleListNode {
+	
+	int key;
+	int value;
+	DoubleListNode pre = null;
+	DoubleListNode next = null;
+	
+	public DoubleListNode(int _key, int _value) {
+		key = _key;
+		value = _value;
+	}
+}
 
+public class LRUCache {
+	
+    public LRUCache(int capacity) {
+        
+    }
+    
+    public int get(int key) {
+        
+    	return -1;
+    }
+    
+    public void set(int key, int value) {
+        
+    }
+	
+}
+
+
+/**
+ * @deprecated
+ * @author Bolun
+ *
+ */
+/*
+public class LRUCache {
+	
     public static class Entry {
         public int key = 0;
         public int value = 0;
@@ -63,4 +100,4 @@ public class LRUCache {
         }
         return;
     }
-}
+}*/

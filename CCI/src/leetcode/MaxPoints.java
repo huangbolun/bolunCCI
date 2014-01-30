@@ -4,6 +4,61 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Definition for a point.
+ * class Point {
+ *     int x;
+ *     int y;
+ *     Point() { x = 0; y = 0; }
+ *     Point(int a, int b) { x = a; y = b; }
+ * }
+ */
+//
+//
+public class MaxPoints {
+	
+	static class Point {
+		int x;
+		int y;
+		Point() { x = 0; y = 0; }
+		Point(int a, int b) { x = a; y = b; }
+	}
+	
+    public static int maxPoints(Point[] points) {
+		int max = 0;
+		for (int i = 0; i < points.length-1; i++) {
+			HashMap<Double, Integer> map = new HashMap<Double, Integer>(); // slope->#ofline
+			Double slope = 0.0;
+		    int overlap = 0;
+		    for (int j = i+1; j < points.length; j++) {
+		        if (points[i].x == points[j].x && points[i].y == points[j].y) { // duplicate points with points[i]
+		            overlap += 1;
+		            continue;
+		        }
+		        if ( points[i].x -points[j].x == 0 ) { // vertical line
+		            slope = Double.MAX_VALUE;
+		        } else {
+		            slope = 1.0 * ((Math.abs(points[i].y - points[j].y)) / (Math.abs(points[i].x - points[j].x)));
+		        }
+		        map.put(slope, (map.containsKey(slope))?map.get(slope)+1:2); // 2 as initial num. of points with that slope
+		    }
+		    for (Double key : map.keySet()) {
+		        if (map.get(key)+overlap > max) {
+		            max = map.get(key)+overlap;
+		        }
+		    }
+		}
+		return max;
+    }
+}
+
+
+/**
+ * @deprecated
+ * @author Bolun
+ *
+ */
+/*
 public class MaxPoints {
 	
 	private static class Point {
@@ -126,4 +181,4 @@ public class MaxPoints {
     	
     }
 	
-}
+}*/
