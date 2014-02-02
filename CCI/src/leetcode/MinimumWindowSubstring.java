@@ -1,8 +1,61 @@
 package leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * reference: http://www.cnblogs.com/lichen782/p/leetcode_minimum_window_substring_3.html
+ * use *count* to keep track of the 
+ * @author Bolun
+ *
+ */
+public class MinimumWindowSubstring {
+	public String minWindow(String S, String T){
+        HashMap<Character, Integer> needToFill = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> hasFound = new HashMap<Character, Integer>();
+        int count = 0;
+        for(int i = 0; i < T.length(); i++){
+            if(!needToFill.containsKey(T.charAt(i))){
+                needToFill.put(T.charAt(i), 1); // 
+                hasFound.put(T.charAt(i), 0); // has found zero
+            }else {
+                needToFill.put(T.charAt(i), needToFill.get(T.charAt(i)) + 1);
+            }
+        }
+        int minWinBegin = -1; // initialization 
+        int minWinEnd = S.length(); // initialization
+        for(int begin = 0, end = 0; end < S.length(); end++){
+            char c = S.charAt(end);
+            if(needToFill.containsKey(c)){
+                hasFound.put(c, hasFound.get(c) + 1);
+                if(hasFound.get(c) <= needToFill.get(c)){
+                    count++;
+                }
+                if(count == T.length()){
+                    while(!needToFill.containsKey(S.charAt(begin)) || hasFound.get(S.charAt(begin)) > needToFill.get(S.charAt(begin))) {
+                        if(needToFill.containsKey(S.charAt(begin)) && hasFound.get(S.charAt(begin)) > needToFill.get(S.charAt(begin))){
+                            hasFound.put(S.charAt(begin), hasFound.get(S.charAt(begin)) - 1);
+                        }
+                        begin++;
+                    }
+                    if(end - begin < minWinEnd - minWinBegin){
+                        minWinEnd = end;
+                        minWinBegin = begin;
+                    }
+                }
+            }
+        }
+        return minWinBegin == -1 ? "" : S.substring(minWinBegin, minWinEnd + 1);
+   }
+	
+	public static void main(String[] args) {
+    	MinimumWindowSubstring m = new MinimumWindowSubstring();
+    	System.out.println(m.minWindow("a", "aa"));
+    }
+	
+}
+ 
+
+/*
 public class MinimumWindowSubstring {
     public String minWindow(String S, String T) {
         int minwin = S.length(); // initialized to be the max
@@ -105,3 +158,4 @@ public class MinimumWindowSubstring {
     	ArrayList<Integer> s = new ArrayList<Integer>(l);
     }
 }
+*/

@@ -2,6 +2,11 @@ package leetcode;
 
 import java.util.ArrayList;
 
+/**
+ * This DFS is too naive
+ * @author Bolun
+ *
+ */
 public class RestoreIPAddress {
     public ArrayList<String> restoreIpAddresses(String s) {
         ArrayList<String> result = new ArrayList<String>();
