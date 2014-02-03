@@ -30,9 +30,9 @@ public class RotN {
 	public String shift(String s) {
 		String sn = new String("");
 		int diff = s.charAt(0)-'a';
-	for (int i = 0; i < s.length(); i++) {
+		for (int i = 0; i < s.length(); i++) {
 			sn += String.valueOf((char)(s.charAt(i)-diff));
-	}
-	return sn;
+		}
+		return sn;
 	}
 }

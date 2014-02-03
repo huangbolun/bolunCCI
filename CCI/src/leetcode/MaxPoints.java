@@ -25,28 +25,35 @@ public class MaxPoints {
 	}
 	
     public static int maxPoints(Point[] points) {
+    	if (points == null || points.length == 0) return 0;
+		if (points.length == 1) return 1;
+		if (points.length == 2) return 2;
 		int max = 0;
-		for (int i = 0; i < points.length-1; i++) {
-			HashMap<Double, Integer> map = new HashMap<Double, Integer>(); // slope->#ofline
-			Double slope = 0.0;
-		    int overlap = 0;
+		for (int i = 0; i < points.length; i++) {
+		    HashMap<Double, Integer> map = new HashMap<Double, Integer>();
+		    int same = 0;
 		    for (int j = i+1; j < points.length; j++) {
-		        if (points[i].x == points[j].x && points[i].y == points[j].y) { // duplicate points with points[i]
-		            overlap += 1;
+		        if (points[i].x == points[j].x && points[i].y == points[j].y) {
+		            same += 1; // same point with current point
 		            continue;
 		        }
-		        if ( points[i].x -points[j].x == 0 ) { // vertical line
-		            slope = Double.MAX_VALUE;
+		        if (points[i].x == points[j].x) { // on the same vertical line
+		            if (!map.containsKey(Double.MAX_VALUE)) map.put(Double.MAX_VALUE, 2);
+		            else map.put(Double.MAX_VALUE, map.get(Double.MAX_VALUE)+1);
 		        } else {
-		            slope = 1.0 * ((Math.abs(points[i].y - points[j].y)) / (Math.abs(points[i].x - points[j].x)));
-		        }
-		        map.put(slope, (map.containsKey(slope))?map.get(slope)+1:2); // 2 as initial num. of points with that slope
-		    }
-		    for (Double key : map.keySet()) {
-		        if (map.get(key)+overlap > max) {
-		            max = map.get(key)+overlap;
+		            Double slope = (double) (points[i].y - points[j].y) / (points[i].x - points[j].x);
+		            if (!map.containsKey(slope)) map.put(slope, 2);
+		            else map.put(slope, map.get(slope)+1);
 		        }
 		    }
+		    if (map.size() > 0) {
+		       	for (Double d : map.keySet()) {
+		            if (max < map.get(d)+same) max = map.get(d)+same; // don't forget duplicated points
+		        }
+		    } else {
+		        max = Math.max(max, same+1);
+		    }
+
 		}
 		return max;
     }

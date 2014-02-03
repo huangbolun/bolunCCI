@@ -4,7 +4,7 @@ import amazon.ListLoopQuestion.ListNode;
 
 
 
-public class RemoveDuplicatesLinkedList {
+public class RemoveDuplicatesFromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
         if (head == null)
             return head;
